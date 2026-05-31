@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Version Xampp Meta Panel</title>
+    <link rel="icon" href="icon/metapanel.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav>
+        <center><img src="icon/metapanel.png" alt="X" width="50" height="50" style="object-fit: contain;"></center>
+        <h1>Pasang Versi Terbaru Xampp Meta Panel</h1>
+        <a href="#overview" class="active">0. Gambaran Umum</a>
+        <a href="#download">1. Unduh PHP Terbaru</a>
+        <a href="#prasyarat">2. Prasyarat & Ekstrak</a>
+        <a href="#penyebab">3. Penyebab Error</a>
+        <a href="#langkah1">4. Konfigurasi Bawaan</a>
+        <a href="#langkah2">5. Aktifkan Ekstensi</a>
+        <a href="#langkah3">6. Perbaiki Browscap</a>
+        <a href="#langkah4">7. Restart Apache</a>
+        <a href="#verifikasi">8. Verifikasi & Test</a>
+        <a href="#rollback">9. Rollback</a>
+        <a href="#troubleshoot">10. Troubleshooting</a>
+    </nav>
+
+    <main>
+        
+        <section id="overview">
+            <h2>Gambaran Umum <span class="step-number">ℹ</span></h2>
+            <img src="img/1.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <p>Dokumentasi ini memberikan panduan lengkap mulai dari mengunduh PHP versi baru, memasangnya di XAMPP, hingga memperbaiki error yang terjadi akibat proses upgrade manual pada sistem operasi Windows.</p>
+            <p>Cara Cepat Untuk Upgrade PHP Di XAMPP Meta Panel:</p>
+            <ol>
+                <li>Klik Download   <strong><a href="https://windows.php.net/download" target="_blank" style="color: var(--primary-color); font-weight: bold;">https://windows.php.net/download</a></strong></li>
+                <li>Klik <strong>XAMPP Meta Panel</strong> dan pilih <strong>Swich PHP</strong> pada PHP.</li>
+                <li>File Akan Extrak <strong>Melalui Patch</strong> C:/xampp/php{Version}</strong></li>
+                <li>Rename Patch <strong>C:/xampp/php</strong> Menjadi <strong>C:/xampp/php_old</strong></li>
+                <li>Setelah Sudah <strong>Rename Kembali Patch php{Version}</strong></li>
+                <li>Rename Patch <strong>C:/xampp/php{Version}</strong> Menjadi <strong>C:/xampp/php</strong></li>
+                <li>Copy Patch php.ini <strong>Di Folder Patch</strong> C:/xampp/php_old <strong>Di pindahkan ke C:/xampp/php</strong></li>
+                <li>Lalu Patch <strong>C:\xampp\php_old\extras</strong> copy file browscap.ini <strong>Di pindahkan ke C:/xampp/php/extras</strong></li>
+                <li>Lalu Lanjut Ke Langkah Nomor 10</li>
+            </ol>
+            
+            <div class="callout important">
+                <strong>Estimasi Waktu:</strong> 1 - 5 Menit<br>
+                <strong>Kesulitan:</strong> Menengah (Membutuhkan ketelitian dalam mengedit file konfigurasi dan memilih versi PHP)
+            </div>
+        </section>
+
+        <section id="download">
+            <h2><span class="step-number">1</span> Unduh Versi PHP Terbaru untuk XAMPP Meta Panel</h2>
+            <img src="img/2.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <p>Untuk mengunduh versi PHP terbaru yang siap pakai di Windows dan cocok untuk XAMPP Anda, ikuti langkah berikut agar tidak salah mengambil <em>source code</em> lagi:</p>
+            
+            <h3>1.1. Buka Situs Resmi PHP Windows</h3>
+            <p>Langsung buka browser Anda dan kunjungi halaman resmi unduhan PHP untuk Windows:</p>
+            <p>👉 <a href="https://windows.php.net/download" target="_blank" style="color: var(--primary-color); font-weight: bold;">windows.php.net/download</a></p>
+
+            <h3>1.2. Pilih Versi Terbaru (Misalnya PHP 8.4 atau 8.5)</h3>
+            <p>Di halaman tersebut, Anda akan melihat beberapa pilihan versi. Cari blok versi paling atas (versi stabil terbaru saat ini).</p>
+
+            <h3>1.3. Cari Bagian "VS16 x64 Thread Safe"</h3>
+            <div class="callout danger">
+                <strong>Paling Krusial:</strong> Ini adalah bagian yang paling penting. Jangan sampai salah klik.
+                <ul style="margin-top: 10px; margin-bottom: 0;">
+                    <li>Pastikan pilih yang ada tulisan <strong>Thread Safe</strong>. (XAMPP membutuhkan versi <em>Thread Safe</em>, bukan <em>Non-Thread Safe</em>).</li>
+                    <li>Pastikan arsitekturnya sesuai dengan Windows Anda (biasanya <strong>x64</strong> untuk Windows 64-bit modern).</li>
+                </ul>
+            </div>
+
+            <h3>1.4. Klik Link "Zip"</h3>
+            <p>Di bawah tulisan <em>Thread Safe</em> tersebut, cari tulisan <strong>Zip</strong> (ukurannya sekitar 25-30 MB) lalu klik untuk mengunduhnya.</p>
+
+            <h3>1.5. Cara Cepat Menggunakan Terminal (Alternatif)</h3>
+            <p>Jika Anda malas membuka browser dan ingin langsung mengunduhnya via Command Prompt (CMD), Anda bisa memanfaatkan fitur bawaan Windows bernama <code>winget</code>.</p>
+            <p>Cukup buka <strong>CMD</strong>, lalu ketik perintah berikut untuk langsung mendownload file <code>.zip</code> PHP versi 8.4 terbaru ke folder Anda saat ini:</p>
+            <pre><code>winget download PHP.PHP.8.4</code></pre>
+            
+            <div class="callout success">
+                <strong>Hasil Ekstrak:</strong> Setelah file <code>.zip</code> tersebut selesai diunduh, Anda tinggal mengekstrak isinya ke dalam folder <code>C:\xampp\php</code>. Struktur dalamnya dijamin akan langsung rapi dan lengkap dengan file <code>.exe</code> serta <code>.dll</code>!
+            </div>
+        </section>
+
+        <section id="prasyarat">
+            <h2><span class="step-number">2</span> Prasyarat & Persiapan Ekstrak</h2>
+            <img src="img/3.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <p>Pastikan hal-hal berikut sudah terpenuhi sebelum memulai konfigurasi:</p>
+            <ul>
+                <li>XAMPP terinstal di direktori standar (<code>C:\xampp</code>).</li>
+                <li>Anda sudah mengekstrak file ZIP PHP baru ke <code>C:\xampp\php</code> (menggantikan yang lama).</li>
+                <li>Setelah Selesai Di Extraxt Otomatis muncul patch <code>C:\xampp\php{version}</code> (php patch baru).</li>
+                <li>Anda Bisa Backup terlebih dahulu <code>C:\xampp\php</code> dan ubah patch php baru ke <code>C:\xampp\php_old</code>.</li>
+                <li>Anda Bisa Merubah File <code>C:\xampp\php{version}</code> dan ubah patch php baru ke <code>C:\xampp\php</code>.</li>
+            </ul>
+        </section>
+
+        <section id="penyebab">
+            <h2><span class="step-number">3</span> Penyebab Error Upgrade PHP</h2>
+            <p>Error biasanya terjadi justru karena efek samping dari menyalin file <code>php.ini</code> lama ke folder PHP baru yang kita lakukan sebelumnya.</p>
+            
+            <div class="callout danger">
+                <strong>Masalah Utama:</strong> Versi PHP yang baru memiliki struktur internal yang berbeda, sehingga konfigurasi lama Anda menyebabkan bentrokan (ganda <em>load</em> module) dan salah membaca jalur (<em>path</em>) folder.
+            </div>
+            
+            <p>Jangan panik, ini masalah umum saat <em>upgrade</em> PHP. Ikuti langkah-langkah di bawah ini untuk memperbaikinya.</p>
+        </section>
+
+        <section id="langkah1">
+            <h2><span class="step-number">4</span> Gunakan File Konfigurasi Bawaan PHP Baru</h2>
+            <img src="img/4.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <p>Kita akan membuang file <code>php.ini</code> lama yang tidak kompatibel, dan menggantinya dengan template bawaan dari PHP yang baru.</p>
+            
+            <ol>
+                <li>Masuk ke folder <code>C:\xampp\php</code> yang baru.</li>
+                <li>Hapus file <code>php.ini</code> yang ada di sana (file hasil kopian sebelumnya).</li>
+                <li>Cari file bernama <code>php.ini-development</code> (direkomendasikan untuk development).</li>
+                <li>Ubah nama (<em>rename</em>) file tersebut menjadi <strong><code>php.ini</code></strong>.</li>
+            </ol>
+        </section>
+
+        <section id="langkah2">
+            <h2><span class="step-number">5</span> Aktifkan Ekstensi yang Diperlukan</h2>
+            <img src="img/5.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <p>Karena kita menggunakan file konfigurasi yang segar, kita perlu mengaktifkan ulang ekstensi penting agar XAMPP berjalan normal.</p>
+            
+            <h3>A. Mengatur Jalur Extension Directory</h3>
+            <ol>
+                <li>Buka file <code>php.ini</code> yang baru saja Anda ganti namanya tadi menggunakan Notepad.</li>
+                <li>Cari baris berikut (Gunakan <code>Ctrl + F</code>):</li>
+            </ol>
+            <pre><code>;extension_dir = "ext"</code></pre>
+            <p>Ubah dengan menghapus tanda titik koma (<code>;</code>) di depannya dan sesuaikan jalurnya menjadi:</p>
+            <pre><code>extension_dir = "C:\xampp\php\ext"</code></pre>
+
+            <h3>B. Mengaktifkan OpenSSL &amp; Ekstensi Lainnya</h3>
+            <ol>
+                <li>Cari baris openssl:</li>
+            </ol>
+            <pre><code>;extension=openssl</code></pre>
+            <p>Hapus tanda titik koma (<code>;</code>) di depannya agar menjadi aktif:</p>
+            <pre><code>extension=openssl</code></pre>
+            
+            <div class="callout important">
+                <strong>PENTING:</strong> Pastikan <strong>hanya ada satu</strong> baris <code>extension=openssl</code> yang aktif di dalam file ini untuk menghindari error "Module already loaded".
+            </div>
+
+            <p>Cari dan aktifkan juga beberapa ekstensi penting lainnya dengan menghapus tanda titik koma (<code>;</code>) di depannya:</p>
+            <ul>
+                <li><code>extension=curl</code></li>
+                <li><code>extension=fileinfo</code></li>
+                <li><code>extension=mbstring</code></li>
+                <li><code>extension=mysqli</code></li>
+                <li><code>extension=pdo_mysql</code></li>
+            </ul>
+        </section>
+
+        <section id="langkah3">
+            <h2><span class="step-number">6</span> Perbaiki Jalur browscap.ini</h2>
+            <img src="img/6.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <p>Error <code>Cannot open "\xampp\php\extras\browscap.ini"</code> muncul karena PHP baru tidak menemukan file tersebut di folder <code>extras</code>.</p>
+            
+            <ol>
+                <li>Masih di dalam file <code>php.ini</code>, cari kata <code>browscap</code>.</li>
+                <li>Anda akan menemukan baris seperti ini:</li>
+            </ol>
+            <pre><code>;browscap = "C:\xampp\php\extras\browscap.ini"</code></pre>
+            
+            <ol start="3">
+                <li>Jika Anda tidak terlalu membutuhkan fitur deteksi browser, <strong>biarkan saja baris tersebut memiliki tanda titik koma (<code>;</code>) di depannya (tetap di-comment)</strong>. PHP baru secara default mematikannya, dan itu akan menghilangkan error tersebut.</li>
+            </ol>            
+            <ol start="4">
+                <img src="img/7.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+                <li>Jika Memang Diperlukan, Hapus Tanda Titik Koma (<code>;</code>) di depannya agar menjadi aktif:</li>
+                <li>bisa kalian pindahkan browscap.ini ke folder C:\xampp\php\extras\ dari path C:\xampp\php_old\</li>
+                <pre><code>browscap = "C:\xampp\php\extras\browscap.ini"</code></pre>
+            </ol>
+        </section>
+
+        <section id="langkah4">
+            <h2><span class="step-number">7</span> Simpan dan Restart Apache</h2>
+            <img src="img/8.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <ol>
+                <li>Simpan perubahan pada file <code>php.ini</code> (<code>Ctrl + S</code>).</li>
+                <li>Buka <strong>XAMPP Control Panel</strong>, klik <strong>Stop</strong> pada Apache, lalu klik <strong>Start</strong> kembali.</li>
+            </ol>
+
+            <div class="callout warning">
+                <strong>Catatan:</strong> Error <code>Unable to start standard module</code> biasanya otomatis hilang setelah <code>extension_dir</code> diarahkan ke folder yang benar (<code>C:\xampp\php\ext</code>) pada Langkah 5.
+            </div>
+        </section>
+
+        <section id="verifikasi">
+            <h2><span class="step-number">8</span> Verifikasi dan Pengujian</h2>
+            <img src="img/9.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <p>Setelah Apache berhasil menyala tanpa error, lakukan pengecekan berikut untuk memastikan PHP berjalan dengan versi yang baru:</p>
+            <ol>
+                <li>Buka folder <code>C:\xampp\htdocs</code>.</li>
+                <li>Buat file baru bernama <code>phpinfo.php</code>.</li>
+                <li>Buka file tersebut dengan Notepad dan isi dengan kode berikut:</li>
+            </ol>
+            <pre><code>&lt;?php
+phpinfo();
+?&gt;</code></pre>
+            <li>Buka browser dan akses <code>http://localhost/phpinfo.php</code>.</li>
+            <li>Halaman akan menampilkan informasi PHP. Pastikan versi PHP di paling atas sesuai dengan versi baru yang Anda pasang.</li>
+            
+            <div class="callout success">
+                <strong>Keamanan:</strong> Setelah selesai mengecek, hapus file <code>phpinfo.php</code> dari htdocs agar informasi server Anda tidak terekspos ke publik.
+            </div>
+        </section>
+
+        <section id="rollback">
+            <h2><span class="step-number">9</span> Prosedur Rollback</h2>
+            <img src="img/10.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <p>Jika terjadi hal yang tidak diinginkan atau aplikasi Anda tidak kompatibel dengan PHP versi baru, Anda dapat mengembalikan PHP ke versi sebelumnya:</p>
+            <ol>
+                <li>Stop Apache dari XAMPP Control Panel.</li>
+                <li>Rename folder <code>C:\xampp\php</code> yang baru menjadi <code>C:\xampp\php_new_failed</code>.</li>
+                <li>Rename folder <code>C:\xampp\php_old</code> kembali menjadi <code>C:\xampp\php</code>.</li>
+                <li>Konfigurasi lama Anda akan kembali aktif. Start Apache kembali.</li>
+                <li>👉 Jikalau Ingin Melanjutkan Upgrade PHP Di Xampp Meta Panel ikuti Step Ke 10</li>
+            </ol>
+        </section>
+
+        <section id="troubleshoot">
+            <h2><span class="step-number">10</span> Troubleshooting PhpMyAdmin</h2>
+            <img src="img/11.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <h3>Download SQL Server</h3>
+            <p>👉 <a href="https://www.phpmyadmin.net/downloads/" target="_blank" style="color: var(--primary-color); font-weight: bold;">https://www.phpmyadmin.net/downloads/</a></p>
+            <p>Download SQL Server dan install di komputer Anda.</p>
+        </section>
+
+        
+        <section id="troubleshoot">
+            <h2><span class="step-number">11</span> Exekuasi PhpMyAdmin</h2>
+            <h3>Eksekuasi Mengganti Versi PhpMyAdmin</h3>
+            <img src="img/15.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <p>Setelah di download kalian bisa switch versi PhpMyAdmin dengan versi yang baru di Xampp Meta Panel.</p>
+            <p>Setelah Sudah Masuk ke Folder C:/xampp/</p>
+            <p>Kalian ubah folder C:/xampp/PhpMyAdmin Menjadi C:/xampp/PhpMyAdmin_old</p>
+            <p>Setelah sudah kalian copy File patch "config.inc.php"</p>
+            <p>Di copy di folder C:/xampp/PhpMyAdmin_old di pindahkan ke C:/xampp/PhpMyAdmin Versi Baru</p>
+            <img src="img/12.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <p>Lalu Cek Kembali Versi Php nya di localhost/dashboard/phpinfo.php</p>
+            <img src="img/15.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <h3>Kalian Bisa Menjalankan PhpMyAdmin Dan Juga Php Di Versi Terbaru</h3>
+            <p>Kalian Restart Apache dan Mariadb nya lalu jalankan kembali PhpMyAdmin</p>
+        </section>
+
+        <section id="troubleshoot">
+            <h2><span class="step-number">12</span> Cookies Bug Web Server</h2>
+            <img src="img/13.png" alt="Contoh File ZIP PHP" style="width: 100%; max-width: 900px; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 15px;">
+            <h3>Jikalau Masih Terjadi bug kalian Bisa hapus Cookies</h3>
+            <p>Cara nya kalian cukup centang :</p>
+            <p>1. Ctrl + Shift + Del</p>
+            <p>2. cookies And Other Site Data</p>
+            <p>3. Chached Image and Files</p>
+            <p>4. Setelah itu delete data</p>
+            <p>Jikalau Tidak Terjadi Apa Apa dan masih Normal dan berhasil Tidak Perlu Di Hapus</p>
+        </section>
+
+    </main>
+
+    <aside class="meta-panel">
+        <h4>Informasi Sistem</h4>
+        <div class="meta-item">
+            <span>Version Support</span>
+            Xampp Meta Panel V5.2.4
+        </div>
+        <div class="meta-item">
+            <span>Platform</span>
+            Windows (x64)
+        </div>
+        <div class="meta-item">
+            <span>Aplikasi</span>
+            XAMPP Web Server
+        </div>
+        <div class="meta-item">
+            <span>Tipe Paket PHP</span>
+            VS16 Thread Safe (TS)
+        </div>
+        
+        <h4 style="margin-top: 30px;">Status Dokumen</h4>
+        <div class="meta-item">
+            <span>Versi Dokumen</span>
+            v3.0 (Lengkap)
+        </div>
+        <div class="meta-item">
+            <span>Sifat Panduan</span>
+            Manual Upgrade
+        </div>
+        <div class="meta-item">
+            <span>Terakhir Diperbarui</span>
+            2026-05-15
+        </div>
+    </aside>
+
+    <script src = "js/script.js"></script>
+</body>
+</html>
