@@ -9,8 +9,8 @@
     <style>
         .language-selector {
             position: fixed;
-            top: 550px;
-            right: 30px;
+            top: 680px;
+            right: 50px;
             z-index: 1000;
             display: flex;
             gap: 5px;
@@ -295,40 +295,151 @@ phpinfo();
 
     </main>
 
-    <aside class="meta-panel">
-        <h4 data-i18n="mp_h1">Informasi Sistem</h4>
+<aside class="meta-panel">
+    <h4 class="panel-title" data-i18n="mp_h1">Informasi Sistem</h4>
+    
+    <div class="meta-item-group">
         <div class="meta-item">
-            <span data-i18n="mp_s1">Version Support</span>
-            Xampp Meta Panel V5.2.4+
+            <span class="meta-label" data-i18n="mp_s1">Version Support</span>
+            <div class="meta-value">
+                <svg class="meta-icon" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M14 3H2v10h12V3zM2 2h12a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1fffzm7 3H3v2h6V5zm4 4H3v2h10V9z"/></svg>
+                <span>Xampp Meta Panel V5.2.4+</span>
+                <span class="badge badge-up">&#8593;</span>
+            </div>
         </div>
-        <div class="meta-item">
-            <span data-i18n="mp_s2">Platform</span>
-            Windows (x64)
-        </div>
-        <div class="meta-item">
-            <span data-i18n="mp_s3">Aplikasi</span>
-            XAMPP Web Server
-        </div>
-        <div class="meta-item">
-            <span data-i18n="mp_s4">Tipe Paket PHP</span>
-            VS16 Thread Safe (TS)
-        </div>
-        
-        <h4 style="margin-top: 30px;" data-i18n="mp_h2">Status Dokumen</h4>
-        <div class="meta-item">
-            <span data-i18n="mp_s5">Versi Dokumen</span>
-            v3.0 (Lengkap)
-        </div>
-        <div class="meta-item">
-            <span data-i18n="mp_s6">Sifat Panduan</span>
-            Manual Upgrade
-        </div>
-        <div class="meta-item">
-            <span data-i18n="mp_s7">Terakhir Diperbarui</span>
-            2026-05-15
-        </div>
-    </aside>
 
+        <div class="meta-item">
+            <span class="meta-label" data-i18n="mp_s1">Version Support</span>
+            <div class="meta-value">
+                <svg class="meta-icon" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M14 3H2v10h12V3zM2 2h12a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1fffzm7 3H3v2h6V5zm4 4H3v2h10V9z"/></svg>
+                <span>Xampp Meta Panel V5.2.3</span>
+                <span class="badge badge-down">&#8595;</span>
+            </div>
+        </div>
+
+        <div class="meta-item">
+            <span class="meta-label" data-i18n="mp_s2">Platform</span>
+            <div class="meta-value">
+                <svg class="meta-icon" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M12.5 2H3.5A1.5 1.5 0 0 0 2 3.5v9A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 12.5 2zM3.5 3h9a.5.5 0 0 1 .5.5v5H2v-5a.5.5 0 0 1 .5-.5zM2 12.5V10h12v2.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z"/></svg>
+                <span>Windows (x64)</span>
+            </div>
+        </div>
+
+        <div class="meta-item">
+            <span class="meta-label" data-i18n="mp_s3">Aplikasi</span>
+            <div class="meta-value">
+                <svg class="meta-icon" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M7.832 1.096a.5.5 0 0 1 .336 0l5.5 1.964A.5.5 0 0 1 14 3.536v8.928a.5.5 0 0 1-.332.472l-5.5 1.964a.5.5 0 0 1-.336 0l-5.5-1.964A.5.5 0 0 1 2 12.464V3.536a.5.5 0 0 1 .332-.472l5.5-1.964zM3 4.1l4.5 1.607v7.186L3 11.286V4.1zm9 7.186V4.1L7.5 5.707v7.186l4.5-1.607z"/></svg>
+                <span>XAMPP Web Server</span>
+            </div>
+        </div>
+
+        <div class="meta-item">
+            <span class="meta-label" data-i18n="mp_s4">Tipe Paket PHP</span>
+            <div class="meta-value">
+                <svg class="meta-icon" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5v-11zM2.5 2a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-11a.5.5 0 0 0-.5-.5h-11z"/></svg>
+                <span>VS16 Thread Safe (TS)</span>
+            </div>
+        </div>
+    </div>
+    
+    <h4 class="panel-title text-separator" data-i18n="mp_h2">Status Dokumen</h4>
+    
+    <div class="meta-item-group">
+        <div class="meta-item">
+            <span class="meta-label" data-i18n="mp_s5">Versi Dokumen</span>
+            <div class="meta-value">
+                <span class="doc-badge">v3.0 (Lengkap)</span>
+            </div>
+        </div>
+
+        <div class="meta-item">
+            <span class="meta-label" data-i18n="mp_s6">Sifat Panduan</span>
+            <div class="meta-value">
+                <span>Manual Upgrade</span>
+            </div>
+        </div>
+
+        <div class="meta-item">
+            <span class="meta-label" data-i18n="mp_s7">Terakhir Diperbarui</span>
+            <div class="meta-value datetime">
+                <svg class="meta-icon" viewBox="0 0 16 16" width="14" height="14"><path fill="currentColor" d="M6 2h4V1h1v1h2.5A1.5 1.5 0 0 1 15 3.5v10a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5v-10A1.5 1.5 0 0 1 2.5 2H4V1h1v1zm8 4H2v7.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V6zm-1-2.5a.5.5 0 0 0-.5-.5H2.5a.5.5 0 0 0-.5.5V5h12v-1.5z"/></svg>
+                <span>2026-05-15</span>
+            </div>
+        </div>
+    </div>
+</aside>
+<style>
+.meta-panel {
+    width: 260px;
+    padding: 16px;
+    background-color: #1e1e1e; 
+    color: #cccccc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.panel-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #f1f1f1;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.5px;
+}
+
+.text-separator {
+    margin-top: 24px;
+}
+
+.meta-item-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px; 
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; 
+}
+
+.meta-label {
+    font-size: 11px;
+    color: #858585; 
+}
+
+.meta-value {
+    display: flex;
+    align-items: center;
+    gap: 6px; 
+    font-size: 13px;
+    color: #e0e0e0;
+}
+.meta-icon {
+    color: #3b82f6; 
+    flex-shrink: 0;
+}
+.badge {
+    font-size: 11px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+.badge-up {
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+}
+.badge-down {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+}
+.doc-badge {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    border: 1px solid #555;
+}
+</style>
     <script src="js/script.js"></script>
     <script>
     // --- SCRIPT PENERJEMAH BAHASA ---
